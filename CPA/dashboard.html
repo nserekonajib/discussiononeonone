@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard</h1>
+            <button onclick="signOut()">Sign Out</button>
+            <div id="notification-bell"></div>
+        </header>
+        <main id="content">
+            <!-- User Dashboard -->
+            <div id="user-dashboard" class="dashboard-section">
+                <h2>Create Task</h2>
+                <input type="text" id="course-unit" placeholder="Course Unit" required>
+                <input type="text" id="topic" placeholder="Topic" required>
+                <select id="level">
+                    <option value="" disabled selected>Select Level</option>
+                    <option value="Level 1">Level 1</option>
+                    <option value="Level 2">Level 2</option>
+                    <option value="Level 3">Level 3</option>
+                    <option value="Level 4">Level 4</option>
+                </select>
+                <button onclick="createTask()">Create Task</button>
+                <div id="task-list"></div>
+            </div>
+            <!-- Admin Dashboard -->
+            <div id="admin-dashboard" class="dashboard-section" style="display: none;">
+                <h2>Admin Dashboard</h2>
+                <div id="admin-task-list"></div>
+                <div id="admin-message">
+                    <h3>Send Message to User</h3>
+                    <input type="text" id="admin-message-user-id" placeholder="User ID" required>
+                    <textarea id="admin-message-text" placeholder="Message" required></textarea>
+                    <button onclick="sendAdminMessage()">Send Message</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

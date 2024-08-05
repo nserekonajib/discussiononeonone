@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Discussions</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="auth-container">
+      <h2>Sign Up</h2>
+      <input type="text" id="full-name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="tel" id="mobile" placeholder="Mobile Number" required>
+      <button id="sign-up-btn">Sign Up</button>
+      <p>Already have an account? <span id="show-login">Login</span></p>
+    </div>
+    <div id="login-container" class="hidden">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button id="login-btn">Login</button>
+      <p>Don't have an account? <span id="show-signup">Sign Up</span></p>
+    </div>
+    <div id="dashboard" class="hidden">
+      <h2>Dashboard</h2>
+      <div id="notifications">
+        <span class="bell-icon">&#128276;</span>
+        <span id="notification-count" class="badge">0</span>
+      </div>
+      <div id="discussion-form">
+        <h3>Request Discussion</h3>
+        <select id="cpa-level">
+          <option value="1">Level 1</option>
+          <option value="2">Level 2</option>
+          <option value="3">Level 3</option>
+          <option value="4">Level 4</option>
+        </select>
+        <input type="text" id="course-unit" placeholder="Course Unit" required>
+        <input type="text" id="topic" placeholder="Topic" required>
+        <button id="create-task-btn">Create Discussion Task</button>
+      </div>
+      <div id="tasks">
+        <h3>Your Requests</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Discussion</th>
+              <th>Topic</th>
+              <th>Time</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="task-list">
+            <!-- Tasks will be added here dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
